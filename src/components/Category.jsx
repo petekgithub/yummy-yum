@@ -61,15 +61,7 @@ const Slink = styled.div `
     background: linear-gradient(to right, #9cb4cc, #747474);
   }
 
-
-
-
-
-
 `;
-
-
-
 
 
 

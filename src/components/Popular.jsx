@@ -21,31 +21,20 @@ function Popular() {
     const check = localStorage.getItem('popular');
 
     if(check) {
-      setPopular(JSON.parse(check))
+      setPopular(JSON.parse(check));
     }else {
-      try {
         const response = await fetch (
           `https://api.spoonacular.com/recipes/random?apiKey=${process.env.RECIPE_APP_API_KEY}&number=10`
           );
-          await sleep(2000);
           if (!response.ok) {
             throw new Error("Error fetching users");
           } 
         const result = await response.json();
-        console.log(result);
+       //console.log(result);
         localStorage.setItem("popular", JSON.stringify(result.recipes));
         setPopular(result.recipes);
-        console.log(result.recipes);
-      } catch (error) {
-      } finally {
-        setIsLoading(false);
-      }
+        //console.log(result.recipes);
     }
-  }
-
-
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
 
@@ -75,8 +64,6 @@ function Popular() {
         })}
         </Splide>
       </Wrapper>
-      {isLoading && <div>Loading…</div>}
-
     </div>
   );
 };
