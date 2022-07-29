@@ -16,13 +16,12 @@ function Popular() {
   },[]);
   
   const getPopular = async () => {
-    const check = localStorage.getItem('popular');
-
-    if(check) {
-      setPopular(JSON.parse(check));
-    }else {
+  //  const check = localStorage.getItem('popular');
+   // if(check) {
+     // setPopular(JSON.parse(check));
+  //  }else {
         const response = await fetch (
-          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.RECIPE_APP_API_KEY}&number=10`
+          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`          
           );
           if (!response.ok) {
             throw new Error("Error fetching users");
@@ -30,14 +29,15 @@ function Popular() {
         const result = await response.json();
         localStorage.setItem("popular", JSON.stringify(result.recipes));
         setPopular(result.recipes);
-    }
+        //console.log(result.recipes);
+    //}
   }
 
 
   return (
     <div>
       <Wrapper> 
-        <h2>Today's Top Recipies Here</h2>
+        <h2>Today's Top Recipies</h2>
         <Splide options={{
           perPage:4,
           arrows: false,

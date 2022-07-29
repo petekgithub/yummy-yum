@@ -17,7 +17,7 @@ function Cuisine() {
 
   const getCusine = async (name) => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.RECIPE_APP_API_KEY}&cuisine=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`
     );
     if(!response.ok) {
       throw new Error("Failed fetching recipes")

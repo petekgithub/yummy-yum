@@ -6,17 +6,17 @@ import { Link, useParams } from "react-router-dom";
 function Searched() {
 
   const [searchedRecipes, setSearchedRecipes] = useState([]);
-  const {type} = useParams();
+  const params = useParams();
 
 
   useEffect(() => {
-    getSearched(type);
-  },[type]);
+    getSearched(params.search);
+  },[params.search]);
 
 
   const getSearched = async (name) => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.RECIPE_APP_API_KEY}&query=${name}`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`
     );
     if(!response.ok) {
       throw new Error("Failed fetching recipes")

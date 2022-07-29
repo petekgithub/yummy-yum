@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 
 function Recipe() {
 
   const [details, setDetails] = useState({});
-  const [activeTab, setActivaTab] = useState('instructions');
+  const [activeTab, setActiveTab] = useState('instructions');
 
   let params = useParams();
 
@@ -20,9 +19,9 @@ function Recipe() {
 
   const fetchDetails = async (name) => {
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.RECIPE_APP_API_KEY}`);
+      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
     const detailData = await response.json();
-    setDetails(details);
+    setDetails(detailData);
   }
 
   return (
@@ -33,17 +32,17 @@ function Recipe() {
       </div>
       <Info>
         <Button className={activeTab === "instructions" ? "active" : ""} 
-        onClick={() => setActivaTab("instructions")}
+        onClick={() => setActiveTab("instructions")}
         >
         instructions</Button>
         <Button className={activeTab === "ingredients" ? "active" : ""} 
-        onClick={() => setActivaTab("ingredients")}
+        onClick={() => setActiveTab("ingredients")}
         >
         ingredients</Button>
         {activeTab === 'instructions' && (
           <div>
-            <h3 dangerouslySetInnerHTML={{__html: details.summary }}>{details.summary}</h3>
-            <h3 dangerouslySetInnerHTML={{__html: details.instructions }}>{details.summary}</h3>
+            <h3 dangerouslySetInnerHTML={{__html: details.summary }}></h3>
+            <h3 dangerouslySetInnerHTML={{__html: details.instructions }}></h3>
           </div>
         )}
         {activeTab === 'ingredients' && (
@@ -51,7 +50,7 @@ function Recipe() {
           {details.extendedIngredients.map((ingredient) => (
             <li key={ingredient.id}>{ingredient.original}</li>
           ))}
-        </ul>
+        </ul> 
         )}
       </Info>
     </DetailWrapper>

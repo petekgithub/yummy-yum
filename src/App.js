@@ -1,10 +1,9 @@
-import Pages from './pages/Pages';
-import Category from 'components/Category';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Link} from 'react-router-dom';
 import {SiCodechef} from 'react-icons/si';
 import styled from 'styled-components';
 import Search from 'components/Search';
-
+import Category from 'components/Category';
+import Pages from './pages/Pages';
 
 function App() {
   return (
@@ -33,7 +32,7 @@ const Nav = styled.div`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 400;
   font-family: 'Shadows Into Light', cursive;

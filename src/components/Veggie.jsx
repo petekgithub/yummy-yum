@@ -18,12 +18,11 @@ function Veggie() {
   
   const getVeggie = async () => {
     const check = localStorage.getItem('veggie');
-
     if(check) {
       setVeggie(JSON.parse(check));
     }else {
         const response = await fetch (
-          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.RECIPE_APP_API_KEY}&number=10&tags=vegetarian`
+          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10&tags=vegetarian`
           );
           if (!response.ok) {
             throw new Error("Error fetching users");

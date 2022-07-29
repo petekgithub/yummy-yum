@@ -11,8 +11,8 @@ function Home() {
       initial={{opacity:0}}
       exit={{opacity:0}}
     >
-    <Veggie />
-    <Popular />
+      <Popular />
+      <Veggie />
     </motion.div>
       
   )
