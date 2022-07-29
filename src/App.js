@@ -1,9 +1,10 @@
-import {BrowserRouter, Link} from 'react-router-dom';
+import Pages from './pages/Pages';
+import Category from 'components/Category';
+import {BrowserRouter} from 'react-router-dom';
 import {SiCodechef} from 'react-icons/si';
 import styled from 'styled-components';
 import Search from 'components/Search';
-import Category from 'components/Category';
-import Pages from 'components/Pages';
+
 
 function App() {
   return (

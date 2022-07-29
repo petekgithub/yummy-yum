@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom'
 
 
 function Popular() {
-
-  const [isLoading, setIsLoading] = useState(true);
   const [popular, setPopular] = useState([]);
 
 
@@ -30,10 +28,8 @@ function Popular() {
             throw new Error("Error fetching users");
           } 
         const result = await response.json();
-       //console.log(result);
         localStorage.setItem("popular", JSON.stringify(result.recipes));
         setPopular(result.recipes);
-        //console.log(result.recipes);
     }
   }
 
