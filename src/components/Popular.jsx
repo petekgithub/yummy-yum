@@ -12,26 +12,29 @@ function Popular() {
 
 
   useEffect(() => {
-    getPopular();
+    getVeggie();
   },[]);
-  
-  const getPopular = async () => {
-  //  const check = localStorage.getItem('popular');
-   // if(check) {
-     // setPopular(JSON.parse(check));
-  //  }else {
+
+
+  const getVeggie = async () => {
+    const check = localStorage.getItem('veggie');
+    if(check) {
+      setPopular(JSON.parse(check));
+    }else {
         const response = await fetch (
-          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`          
+          `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`
           );
           if (!response.ok) {
             throw new Error("Error fetching users");
           } 
         const result = await response.json();
-        localStorage.setItem("popular", JSON.stringify(result.recipes));
+       //console.log(result);
+        localStorage.setItem("veggie", JSON.stringify(result.recipes));
         setPopular(result.recipes);
         //console.log(result.recipes);
-    //}
+    }
   }
+
 
 
   return (

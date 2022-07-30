@@ -9,10 +9,13 @@ function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
   const {type} = useParams();
 
+  const params = useParams();
+
 
   useEffect(() => {
-    getCusine(type);
-  },[type]);
+    getCusine(params.type);
+    console.log(params.type)
+  },[params.type]);
 
 
   const getCusine = async (name) => {
@@ -46,7 +49,7 @@ function Cuisine() {
     </Grid>
   )
 }
-
+ 
 
 const Grid = styled(motion.div)`
   display: grid;
