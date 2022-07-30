@@ -7,19 +7,19 @@ import { GiNoodles, GiChopsticks } from "react-icons/gi";
 function Category() {
   return (
     <List>
-      <Slink to={"cuisine/Italian"}>
+      <Slink to={"/cuisine/Italian"}>
         <FaPizzaSlice />
         <h3>Italian</h3>
       </Slink>
-      <Slink to={"cuisine/American"}>
+      <Slink to={"/cuisine/American"}>
         <FaHamburger />
         <h3>American</h3>
       </Slink>
-      <Slink to={"cuisine/Thai"}>
+      <Slink to={"/cuisine/Thai"}>
         <GiNoodles />
         <h3>Thai</h3>
       </Slink>
-      <Slink to={"cuisine/Japanese"}>
+      <Slink to={"/cuisine/Japanese"}>
         <GiChopsticks />
         <h3>Japanese</h3>
       </Slink>

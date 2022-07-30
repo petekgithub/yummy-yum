@@ -18,11 +18,13 @@ function Searched() {
     const response = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`
     );
+    console.log(response);
     if(!response.ok) {
       throw new Error("Failed fetching recipes")
     }
       const recipes = await response.json();
       setSearchedRecipes(recipes.results);
+      console.log(recipes);
   }
 
   return (
