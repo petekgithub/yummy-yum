@@ -9,13 +9,13 @@ function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
   const {type} = useParams();
 
-  const params = useParams();
+  //const params = useParams();
 
 
   useEffect(() => {
-    getCusine(params.type);
-    console.log(params.type)
-  },[params.type]);
+    getCusine(type);
+    console.log(type)
+  },[type]);
 
 
   const getCusine = async (name) => {

@@ -2,27 +2,41 @@ import React from 'react'
 import styled from 'styled-components'
 import { FaHamburger, FaPizzaSlice } from "react-icons/fa";
 import { GiNoodles, GiChopsticks } from "react-icons/gi";
+import { Link } from 'react-router-dom'
+
 
 
 function Category() {
   return (
     <List>
-      <Slink to={"/cuisine/Italian"}>
-        <FaPizzaSlice />
+      <Slink>
+      <FaPizzaSlice />
+      <Link to={'/cuisine/Italian'}>
         <h3>Italian</h3>
+      </Link>
       </Slink>
-      <Slink to={"/cuisine/American"}>
-        <FaHamburger />
+
+      <Slink>
+      <FaHamburger />
+      <Link to={'/cuisine/American'}>
         <h3>American</h3>
+      </Link>
       </Slink>
-      <Slink to={"/cuisine/Thai"}>
-        <GiNoodles />
+
+      <Slink>
+      <GiNoodles />
+      <Link to={'/cuisine/Thai'}>
         <h3>Thai</h3>
+      </Link>
       </Slink>
-      <Slink to={"/cuisine/Japanese"}>
-        <GiChopsticks />
-        <h3>Japanese</h3>
+
+      <Slink>
+      <GiChopsticks />
+      <Link to={'/cuisine/korean'}>
+        <h3>korean</h3>
+      </Link>
       </Slink>
+
     </List>
   )
 }

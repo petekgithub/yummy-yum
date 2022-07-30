@@ -7,6 +7,7 @@ function Searched() {
 
   const [searchedRecipes, setSearchedRecipes] = useState([]);
   const params = useParams();
+  //const[clear, setClear] = useState(""); 
 
 
   useEffect(() => {
@@ -24,7 +25,7 @@ function Searched() {
     }
       const recipes = await response.json();
       setSearchedRecipes(recipes.results);
-      console.log(recipes);
+      //console.log(recipes);
   }
 
   return (
