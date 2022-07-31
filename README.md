@@ -1,8 +1,8 @@
 # Yummy App created with ReactJS
 
-I used [spoonacular api](https://spoonacular.com/food-api) api For that project.
+I used [spoonacular api](https://spoonacular.com/food-api) for that project.
 
-- I got an apiKey=undefined erroe because I declared api variables like this:
+- I got an apiKey=undefined error because I declared api variables like this:
 
 ```
 RECIPE_REACT...
