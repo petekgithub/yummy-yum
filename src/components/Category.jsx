@@ -25,15 +25,15 @@ function Category() {
 
       <Slink>
       <GiNoodles />
-      <Link to={'/cuisine/Thai'}>
-        <h3>Thai</h3>
+      <Link to={'/cuisine/Indian'}>
+        <h3>Indian</h3>
       </Link>
       </Slink>
 
       <Slink>
       <GiChopsticks />
-      <Link to={'/cuisine/korean'}>
-        <h3>korean</h3>
+      <Link to={'/cuisine/Chinese'}>
+        <h3>Chinese</h3>
       </Link>
       </Slink>
 

@@ -27,6 +27,7 @@ const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-left: 50% ;
   svg {
     font-size: 4rem;
   }
