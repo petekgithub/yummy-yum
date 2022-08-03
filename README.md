@@ -15,3 +15,5 @@ REACT_APP_API..
 ```
 
 [Adding custom environment variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+
+![untitled (4)](https://user-images.githubusercontent.com/38165351/182718827-793b1847-e1cf-42e8-8a89-7672fa577c0a.GIF)
