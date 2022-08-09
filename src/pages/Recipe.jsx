@@ -10,11 +10,11 @@ function Recipe() {
   const [activeTab, setActiveTab] = useState('instructions');
 
   let params = useParams();
-
+  
 
   useEffect(() => {
-    fetchDetails();
-  },[params.name]);
+    fetchDetails('dsadas');
+  });
 
 
   const fetchDetails = async (name) => {
