@@ -13,7 +13,7 @@ function Recipe() {
   
 
   useEffect(() => {
-    fetchDetails('dsadas');
+    fetchDetails();
   });
 
 
