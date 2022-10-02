@@ -3,18 +3,17 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
 
-
 function Recipe() {
 
   const [details, setDetails] = useState({});
   const [activeTab, setActiveTab] = useState('instructions');
 
   let params = useParams();
-
+  
 
   useEffect(() => {
     fetchDetails();
-  },[params.name]);
+  });
 
 
   const fetchDetails = async (name) => {
